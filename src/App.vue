@@ -20,4 +20,13 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+h1, h2, h3, h4 {
+  font-family: 'Pacifico', cursive;
+}
+
+div, p, input {
+  font-family: 'Lato', sans-serif !important;
+}
+
 </style>
