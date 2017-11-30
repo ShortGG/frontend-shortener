@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img class="logo" src="../static/logo.svg">
+    <img class="logo" src="../static/logo.png">
     <router-view/>
   </div>
 </template>
@@ -31,6 +31,7 @@ div, p, input {
 
 .logo {
   max-width: 272px;
+
 }
 
 </style>
