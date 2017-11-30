@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>Shorten your url</h1>
     <div class="input-container">
-      <input v-model="inputValue" type="text" />
+      <input v-on:keyup.enter="shorten" v-model="inputValue" type="text" />
     </div>
     <div class="button" v-bind:class="{ spin: rotate }" @click="shorten">
       <img alt="cleaver" src="../assets/cleaver-blank.svg" />
@@ -16,7 +16,7 @@ export default {
   methods: {
     async shorten() {
       this.rotate = true;
-      setTimeout(() => { this.rotate = false }, 1000);
+      setTimeout(() => { this.rotate = false; }, 218);
       console.log('input', this.inputValue);
     },
   },
@@ -108,9 +108,9 @@ export default {
 
   .spin {
     box-shadow: inset 0 0 10px #000000 !important;
-    -webkit-animation:spin 1s linear infinite;
-    -moz-animation:spin 1s linear infinite;
-    animation:spin 1s linear infinite;
+    -webkit-animation:spin 0.218s linear infinite;
+    -moz-animation:spin 0.218s linear infinite;
+    animation:spin 0.218s linear infinite;
   }
 
   @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
