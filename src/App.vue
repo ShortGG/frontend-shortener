@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <img class="logo" src="../static/logo.svg">
     <router-view/>
   </div>
 </template>
@@ -27,6 +27,10 @@ h1, h2, h3, h4 {
 
 div, p, input {
   font-family: 'Lato', sans-serif !important;
+}
+
+.logo {
+  max-width: 272px;
 }
 
 </style>
