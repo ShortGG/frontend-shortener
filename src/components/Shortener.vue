@@ -4,6 +4,9 @@
     <div class="input-container">
       <input v-on:keyup.enter="shorten" v-model="inputValue" type="text" />
     </div>
+    <div v-if="longUrl">
+      {{longUrl}}
+    </div>
     <div class="button" v-bind:class="{ spin: rotate }" @click="shorten">
       <img alt="cleaver" src="../assets/cleaver-blank.svg" />
     </div>
@@ -11,18 +14,28 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'Shortener',
   methods: {
     async shorten() {
       this.rotate = true;
       setTimeout(() => { this.rotate = false; }, 218);
-      console.log('input', this.inputValue);
+
+      const response = await axios.get(`${process.env.API_URL}/shorten/${window.btoa(this.inputValue)}`);
+
+      const shortenedUrl = `${process.env.BASE_URL}/${response.data}`;
+
+      this.longUrl = this.inputValue;
+      this.inputValue = shortenedUrl;
     },
   },
   data() {
     return {
       inputValue: '',
+      longUrl: null,
+      shortenedUrl: null,
       rotate: false,
     };
   },
