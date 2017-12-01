@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <img class="logo" src="../static/logo.png">
     <router-view/>
   </div>
 </template>
@@ -20,4 +20,18 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+h1, h2, h3, h4 {
+  font-family: 'Pacifico', cursive;
+}
+
+div, p, input {
+  font-family: 'Lato', sans-serif !important;
+}
+
+.logo {
+  max-width: 272px;
+
+}
+
 </style>
