@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>Shorten your url</h1>
     <div class="input-container">
-      <input v-on:keyup.enter="shorten" v-model="inputValue" type="text" />
+      <input id="mainInput" v-on:keyup.enter="shorten" v-model="inputValue" type="text" />
     </div>
     <div v-if="longUrl">
       {{longUrl}}
@@ -29,6 +29,12 @@ export default {
 
       this.longUrl = this.inputValue;
       this.inputValue = shortenedUrl;
+
+      // automatically select the shortened link
+      setTimeout(() => {
+        const d = document.querySelector('#mainInput');
+        d.select();
+      }, 50);
     },
   },
   data() {
