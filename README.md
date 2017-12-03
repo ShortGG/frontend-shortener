@@ -1,30 +1,16 @@
-# frontend-shortener
+<img src="https://raw.githubusercontent.com/ShortGG/graphic-chart/master/logo.png" alt="logo-short-gg" width="25%" align="right" />
 
-> short.gg frontend (shortener)
+# web-client of short.gg
 
-## Build Setup
+This web client allows the user to shorten a link.
 
-``` bash
-# install dependencies
-npm install
+#### lighthouse audit
+![lighthouse-performance](./illustrations/performance.png)
 
-# serve with hot reload at localhost:8080
-npm run dev
+<hr />
 
-# build for production with minification
-npm run build
+# Preview
 
-# build for production and view the bundle analyzer report
-npm run build --report
+<a href="https://short.gg">short.gg</a>
 
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+![illustration](./illustrations/preview.gif)
