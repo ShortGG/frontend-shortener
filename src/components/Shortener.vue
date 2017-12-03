@@ -1,8 +1,20 @@
 <template>
   <div class="hello">
     <h1>Shorten your url</h1>
-    <div class="input-container">
-      <input v-on:keyup.enter="shorten" v-model="inputValue" type="text" />
+    <div class="input-button-container">
+      <div
+        class="button-clipboard"
+        data-clipboard-target="#mainInput"
+        @click="displayHint"
+      >
+        <img alt="clipboard" src="../assets/clipboard.svg" />
+        <div v-if="hint" class="hint">
+          {{hint}}
+        </div>
+      </div>
+      <div class="input-container">
+        <input id="mainInput" v-on:keyup.enter="shorten" v-model="inputValue" type="text" />
+      </div>
     </div>
     <div v-if="longUrl">
       {{longUrl}}
@@ -15,10 +27,20 @@
 
 <script>
 import axios from 'axios';
+import Clipboard from 'clipboard';
+
+new Clipboard('.button-clipboard');
 
 export default {
   name: 'Shortener',
   methods: {
+    displayHint() {
+      this.hint = 'Copied !';
+
+      setTimeout(() => {
+        this.hint = false;
+      }, 1000);
+    },
     async shorten() {
       this.rotate = true;
       setTimeout(() => { this.rotate = false; }, 218);
@@ -29,6 +51,12 @@ export default {
 
       this.longUrl = this.inputValue;
       this.inputValue = shortenedUrl;
+
+      // automatically select the shortened link
+      setTimeout(() => {
+        const d = document.querySelector('#mainInput');
+        d.select();
+      }, 50);
     },
   },
   data() {
@@ -37,6 +65,7 @@ export default {
       longUrl: null,
       shortenedUrl: null,
       rotate: false,
+      hint: false,
     };
   },
 };
@@ -44,7 +73,7 @@ export default {
 
 <style scoped>
 
-  input, .input-container, .button, .spin {
+  input, .input-container, .button, .spin, .button-clipboard {
     transition: all 0.218s;
   }
 
@@ -56,7 +85,7 @@ export default {
     border: none;
     margin: 0px;
     padding: 0px;
-    width: calc(100% - 1rem);
+    width: calc(100% - 1rem - 2rem - 44px);
     position: absolute;
     z-index: 1;
     outline: none;
@@ -66,10 +95,19 @@ export default {
     text-align: left;
     padding-left: 1rem;
     left: 0;
+
+    padding-right: calc(44px + 2rem);
   }
 
   .input-container {
     padding: 1rem;
+    padding-right: calc(44px + 2rem);
+  }
+
+  .input-button-container {
+    position: relative;
+    max-width: 584px;
+    margin: 0 auto;
   }
 
   .input-container {
@@ -86,6 +124,37 @@ export default {
     border: 1px solid #212121;
   }
 
+  .button-clipboard {
+    position: relative;
+    float: right;
+
+    display: inline-block;
+    border: 1px solid #616161;
+
+    height: 44px;
+    width: 44px;
+    padding: 1rem;
+
+    z-index: 3;
+  }
+
+
+  .button-clipboard:hover {
+    cursor: pointer;
+    background-color: #F1F4BB;
+  }
+
+  .hint {
+    border: 1px solid #031D44;
+    width: 84px;
+    z-index: 40;
+    background-color: #FFF;
+    padding: 1rem;
+
+    position: absolute;
+    bottom: -42px;
+    left: -84px;
+  }
 
   .button {
     position: relative;
