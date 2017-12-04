@@ -1,5 +1,7 @@
 <img src="https://raw.githubusercontent.com/ShortGG/graphic-chart/master/logo.png" alt="logo-short-gg" width="25%" align="right" />
 
+<br />
+
 # web-client of short.gg
 
 This web client allows the user to shorten a link.
