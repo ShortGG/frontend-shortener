@@ -29,7 +29,7 @@
 import axios from 'axios';
 import Clipboard from 'clipboard';
 
-new Clipboard('.button-clipboard');
+new Clipboard('.button-clipboard'); // eslint-disable-line no-new
 
 export default {
   name: 'Shortener',
