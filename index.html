@@ -1,12 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
     <title>Short.gg - URL Shortener</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato:300|Pacifico" rel="stylesheet">
+    <meta name="description" content="Another URL shortener with a cool name.">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- Open Graph -->
+    <meta property="og:url"                content="https://short.gg" />
+    <meta property="og:type"               content="website" />
+    <meta property="og:title"              content="Short.gg — URL Shortener" />
+    <meta property="og:description"        content="Shorten your URLs" />
+    <meta property="og:image"              content="https://short.gg/static/og-image.png" />
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+    <link rel="manifest" href="/static/manifest.json">
+    <meta name="msapplication-TileColor" content="#F44336">
+    <meta name="msapplication-TileImage" content="/static/ms-icon-144x144.png">
+    <meta name="theme-color" content="#F44336">
   </head>
   <body>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110656388-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-110656388-1');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300|Pacifico" rel="stylesheet">
+
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>

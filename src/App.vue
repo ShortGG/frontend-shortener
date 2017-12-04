@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img class="logo" src="../static/logo.png">
+    <img class="logo" src="../static/logo.png" alt="short.gg logo">
     <router-view/>
   </div>
 </template>
