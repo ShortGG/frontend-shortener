@@ -29,6 +29,8 @@
 import axios from 'axios';
 import Clipboard from 'clipboard';
 
+import b64Encode from '@/helpers/b64';
+
 new Clipboard('.button-clipboard'); // eslint-disable-line no-new
 
 export default {
@@ -45,7 +47,7 @@ export default {
       this.rotate = true;
       setTimeout(() => { this.rotate = false; }, 218);
 
-      const response = await axios.get(`${process.env.API_URL}/shorten/${window.btoa(this.inputValue)}`);
+      const response = await axios.get(`${process.env.API_URL}/shorten/${b64Encode(this.inputValue)}`);
 
       const shortenedUrl = `${process.env.BASE_URL}/${response.data}`;
 
