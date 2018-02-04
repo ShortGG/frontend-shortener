@@ -47,7 +47,9 @@ export default {
       this.rotate = true;
       setTimeout(() => { this.rotate = false; }, 218);
 
-      const response = await axios.get(`${process.env.API_URL}/shorten/${b64Encode(this.inputValue)}`);
+      const response = await axios.post(`${process.env.API_URL}/shorten`, {
+        url: b64Encode(this.inputValue),
+      });
 
       const shortenedUrl = `${process.env.BASE_URL}/${response.data}`;
 
